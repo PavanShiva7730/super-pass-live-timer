@@ -1,0 +1,60 @@
+<!-- COUNTDOWN TIMER WIDGET WITH MILLISECONDS + FEATURES -->
+<div style="width:620px;height:280px;background:#fff4e1;border-radius:20px;padding:20px;box-shadow:0 14px 34px rgba(0,0,0,0.15);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;">
+
+  <!-- Logo -->
+  <img src="https://cdn.testbook.com/1763306859559-Supar%20Pass%20LIVE-3%20%282%29.svg/1763306861.svg%2Bxml"
+       style="width:60px;background:#fff;padding:6px;border-radius:12px;margin-bottom:4px;">
+
+  <!-- Title -->
+  <div style="font-size:24px;font-weight:800;color:#ff5a1f;">
+    ⏳ Offer Ends In
+  </div>
+
+  <!-- Timer -->
+  <div id="tb-timer"
+       style="font-size:36px;font-weight:900;color:#333;letter-spacing:1px;margin-top:-4px;">
+  </div>
+
+  <!-- ⭐ Added Feature List -->
+  <div style="font-size:15px;color:#2c1909;font-weight:700;line-height:1.55;text-align:center;margin-top:6px;">
+    ✔ Courses for 375+ Exams &nbsp;&nbsp; ✔ Live & Rec. Classes<br>
+    ✔ Practice Ques. &nbsp;&nbsp; ✔ Study Notes<br>
+    ✔ PYQs &nbsp;&nbsp; ✔ Mock Tests
+  </div>
+
+  <!-- CTA -->
+  <a href="https://testbk.co/1f9wk" target="_blank"
+     style="background:#ff5a1f;color:#fff;padding:12px 30px;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(255,90,31,0.45);margin-top:8px;">
+    Start ₹1 Trial
+  </a>
+
+</div>
+
+<script>
+(function(){
+  function updateTimer(){
+    const now = new Date();
+    const end = new Date();
+    
+    // You used 55:59:59, keeping your logic
+    end.setHours(55, 59, 59, 999);
+
+    const diff = end - now;
+
+    if (diff <= 0) {
+      document.getElementById("tb-timer").innerHTML = "00:00:00.000";
+      return;
+    }
+
+    const h  = String(Math.floor(diff / 3600000)).padStart(2, '0');
+    const m  = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    const s  = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+    const ms = String(diff % 1000).padStart(3, '0');
+
+    document.getElementById("tb-timer").innerHTML = `${h}:${m}:${s}.${ms}`;
+  }
+
+  setInterval(updateTimer, 50);
+  updateTimer();
+})();
+</script>
