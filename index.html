@@ -1,10 +1,11 @@
-<!-- PREMIUM COUNTDOWN + FEATURES PROMO CARD -->
+<!-- RESPONSIVE SUPER PASS WIDGET -->
 <div style="
-  width:640px;
+  max-width:100%;
+  width:100%;
   background:#fff4e1;
-  border-radius:26px;
-  padding:28px;
-  box-shadow:0 18px 45px rgba(0,0,0,0.18);
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -12,99 +13,78 @@
   overflow:hidden;
 ">
 
-  <!-- SMALL CANCEL ANYTIME RIBBON -->
+  <!-- Ribbon -->
   <div style="
     position:absolute;
-    top:18px;
+    top:12px;
     left:-32px;
     background:#ff5a1f;
     color:#fff;
-    padding:5px 42px;
-    font-size:13px;
+    padding:4px 38px;
+    font-size:11px;
     font-weight:800;
     transform:rotate(-18deg);
-    box-shadow:0 8px 18px rgba(255,90,31,0.45);
+    box-shadow:0 6px 15px rgba(255,90,31,0.45);
     text-transform:uppercase;
     z-index:5;
-    letter-spacing:0.5px;
-    border-radius:4px;
   ">
     CANCEL ANYTIME
   </div>
 
-  <!-- 🔥 LOGO ADDED AT THE TOP -->
+  <!-- Logo -->
   <img 
     src="https://cdn.testbook.com/1763306859559-Supar%20Pass%20LIVE-3%20%282%29.svg/1763306861.svg%2Bxml" 
-    style="width:70px;background:#fff;padding:6px;border-radius:14px;box-shadow:0 4px 15px rgba(0,0,0,0.1);margin-bottom:12px;"
+    style="width:60px;background:#fff;padding:6px;border-radius:12px;margin-bottom:12px;box-shadow:0 4px 13px rgba(0,0,0,0.1);"
   >
 
-  <!-- 1️⃣ MAIN HEADING -->
+  <!-- Heading -->
   <div style="
-      font-size:28px;
+      font-size:18px;
       font-weight:900;
       color:#ff4f00;
       text-align:center;
-      margin-top:4px;
   ">
     Get Unlimited Learning of 375+ Exams in ₹1
   </div>
 
-  <!-- 2️⃣ ONE-LINE FEATURES -->
+  <!-- Features -->
   <div style="
-      margin-top:14px;
-      font-size:14px;
+      margin-top:10px;
+      font-size:12px;
       font-weight:700;
       color:#2c1a0f;
       text-align:center;
-      line-height:1.5;
-      opacity:0.95;
+      line-height:1.4;
   ">
-    ✔ Live & Rec. Classes • 
-    ✔ PYQs • 
-    ✔ Study Notes • 
-    ✔ Practice Ques. • 
-    ✔ Mock Tests
+    ✔ Live & Rec. Classes • ✔ PYQs • ✔ Study Notes • ✔ Practice Ques. • ✔ Mock Tests
   </div>
 
-  <!-- 3️⃣ LIMITED TIME OFFER -->
-  <div style="font-size:20px;font-weight:900;color:#ff4f00;margin-top:24px;">
+  <!-- Timer Title -->
+  <div style="font-size:18px;font-weight:900;color:#ff4f00;margin-top:14px;">
     ⏳ Limited Time Offer — Ends In
   </div>
 
-  <!-- 4️⃣ TIMER -->
+  <!-- Timer -->
   <div id="tb-timer"
-       style="font-size:44px;font-weight:900;color:#222;letter-spacing:1px;margin-top:4px;">
+       style="font-size:32px;font-weight:900;color:#222;letter-spacing:1px;margin-top:6px;text-align:center;">
   </div>
 
-  <!-- 5️⃣ CTA BUTTON -->
+  <!-- CTA Button -->
   <a href="https://testbk.co/1f9wk" target="_blank"
      style="
-        margin-top:26px;
+        margin-top:18px;
         background:linear-gradient(90deg,#ff7a2f 0%,#ff4f00 100%);
         color:#fff;
-        padding:16px 40px;
-        font-size:18px;
+        padding:14px 28px;
+        font-size:16px;
         font-weight:900;
-        border-radius:50px;
+        border-radius:40px;
         text-decoration:none;
-        box-shadow:0 12px 28px rgba(255,90,31,0.50);
-        transition:0.3s ease;
-        overflow:hidden;
-     "
-     onmouseover="this.style.transform='translateY(-4px)'"
-     onmouseout="this.style.transform='translateY(0px)'">
-    <span style="position:relative;z-index:2;">Start ₹1 Trial</span>
-
-    <!-- Button Shine Effect -->
-    <span style="
-      content:'';
-      position:absolute;
-      top:0;left:-120%;
-      width:100%;height:100%;
-      background:rgba(255,255,255,0.45);
-      transform:skewX(-20deg);
-      animation:shine 2.8s ease-in-out infinite;
-    "></span>
+        box-shadow:0 10px 20px rgba(255,90,31,0.45);
+        transition:0.2s ease;
+        display:inline-block;
+     ">
+    Start ₹1 Trial
   </a>
 
 </div>
@@ -115,6 +95,20 @@
   60% { left: 140%; }
   100% { left: 140%; }
 }
+
+/* MOBILE RESPONSIVE FIX */
+@media(max-width:480px){
+  #tb-timer {
+    font-size:26px !important;
+  }
+  a {
+    font-size:14px !important;
+    padding:12px 24px !important;
+  }
+  div[style*="font-size:18px;font-weight:900;color:#ff4f00;margin-top:14px"]{
+    font-size:17px !important;
+  }
+}
 </style>
 
 <script>
@@ -122,7 +116,6 @@
   function updateTimer(){
     const now = new Date();
     const end = new Date();
-
     end.setHours(55, 59, 59, 999);
 
     const diff = end - now;
